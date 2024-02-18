@@ -28,18 +28,9 @@ class _OTCPageState extends State<OTCPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                LevelWidget(
-                  imgNumber: 1,
-                  containerColor: Color(0xFFFDE256),
-                ),
-                LevelWidget(
-                  imgNumber: 2,
-                  containerColor: Color(0xFFA9D8F1),
-                ),
-                LevelWidget(
-                  imgNumber: 3,
-                  containerColor: Color(0xFFF2B764),
-                )
+                LevelWidget(imgNumber: 1, containerColor: Color(0xFFFDE256)),
+                LevelWidget(imgNumber: 2, containerColor: Color(0xFFA9D8F1)),
+                LevelWidget(imgNumber: 3, containerColor: Color(0xFFF2B764)),
               ],
             ),
           ),
@@ -95,7 +86,7 @@ class LevelWidget extends StatelessWidget {
           flex: 3,
           child: GestureDetector(
             onTap: () {
-              //TODO: implement fetching from the database
+              //TODO: implement fetching from the database based on the level (can be obtained by imgNumber variable)
             },
             child: Image.asset(
               'assets/level$imgNumber.png',
