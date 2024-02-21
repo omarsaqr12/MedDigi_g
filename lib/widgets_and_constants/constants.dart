@@ -7,4 +7,6 @@ const Color linkColor = Color(0xFF9A55F3);
 const Color appBarColor = Color(0xFFABCCD5);
 const Color ksecondryTextColor = Color(0xFFADADAD);
 const Color kborderBottom = Color(0xFFE4E4E4);
+const Color kmainLevelMenuBackColor = Color(0xFF18374B);
+const Color kmainLevelMenuButtonColor = Color(0xFFF7726E);
 const double horizontalPadding = 15.0;

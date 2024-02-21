@@ -4,9 +4,9 @@ import 'package:medigi_verse_g/widgets_and_constants/flutter-icons-0cca1d69/my_f
 import 'help.dart';
 import 'settings.dart';
 import 'profile.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/otc.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/cosmotics.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescriptions.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc/otc.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/cosmotics/cosmotics.dart';
 
 class HomePage extends StatefulWidget {
   @override

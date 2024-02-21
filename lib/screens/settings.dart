@@ -208,7 +208,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             TextButton(
                               onPressed: () {
                                 //TODO: implement logout functionality
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -296,7 +296,7 @@ class SettingsOptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => pageToNavigate),
         );
