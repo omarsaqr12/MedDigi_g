@@ -102,7 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                           child: Text(
                             welcomeMessage[index],
                             style: const TextStyle(
-                              fontSize: 60,
+                              fontSize: 50,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontFamily: 'Gurajada',

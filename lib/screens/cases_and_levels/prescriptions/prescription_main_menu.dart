@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medigi_verse_g/screens/home.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescription_question.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescription_start.dart';
+import '../before_questions_app_bar.dart';
 
 class PrescriptionMainMenuPage extends StatefulWidget {
   final int levelNumber;
@@ -15,7 +15,7 @@ class PrescriptionMainMenuPage extends StatefulWidget {
 class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
   @override
   Widget build(BuildContext context) {
-    double buttonSize = 45.0;
+    double buttonSize = kButtonSize;
     double containerWidth = 0.85;
 
     return Scaffold(
@@ -25,74 +25,8 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    child: Container(
-                      width: buttonSize,
-                      height: buttonSize,
-                      decoration: BoxDecoration(
-                        color: backgroundColor,
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 3.0),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0xFF01B4ED),
-                            offset: Offset(0, 4.0),
-                            blurRadius: 0.0,
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.transparent,
-                            shape: const CircleBorder(),
-                            elevation: 0,
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: const Icon(
-                            Icons.home,
-                            color: Colors.white,
-                            size: 30.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 5.0,
-                          horizontal: 50.0,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white, width: 2.0),
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(40.0),
-                          ),
-                        ),
-                        child: Text(
-                          'level ${widget.levelNumber}',
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 24.0),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              BeforeQuestionsAppBar(
+                  buttonSize: buttonSize, levelNumber: widget.levelNumber),
               Expanded(
                 child: Stack(
                   children: [
@@ -102,7 +36,7 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
                         heightFactor: containerWidth,
                         child: ClipOval(
                           child: Container(
-                            color: kmainLevelMenuBackColor,
+                            color: kMainLevelMenuBackColor,
                           ),
                         ),
                       ),
@@ -127,7 +61,7 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PrescriptionQuestionPage(
+                        builder: (context) => PrescriptionStartPage(
                             levelNumber: widget.levelNumber),
                       ),
                     );

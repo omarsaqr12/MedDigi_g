@@ -14,7 +14,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   BorderSide side = const BorderSide(
-    color: kborderBottom,
+    color: kBorderBottom,
     width: 1.0,
   );
 
@@ -136,7 +136,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               child: Text(
                                 'Account Settings',
                                 style: TextStyle(
-                                  color: ksecondryTextColor,
+                                  color: kSecondaryTextColor,
                                   fontSize: 18,
                                 ),
                               ),
@@ -200,7 +200,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               child: Text(
                                 'More',
                                 style: TextStyle(
-                                  color: ksecondryTextColor,
+                                  color: kSecondaryTextColor,
                                   fontSize: 18,
                                 ),
                               ),

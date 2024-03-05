@@ -24,7 +24,7 @@ class MedigiGame extends StatelessWidget {
           color: appBarColor,
         ),
       ),
-      home: HomePage(),
+      home: OnboardingScreen(),
     );
   }
 }
