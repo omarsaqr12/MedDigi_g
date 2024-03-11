@@ -5,8 +5,8 @@ import 'help.dart';
 import 'settings.dart';
 import 'profile.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescriptions.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/otc/otc.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/cosmotics/cosmotics.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/otc/otc.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cosmotics/cosmotics.dart';
 
 class HomePage extends StatefulWidget {
   @override

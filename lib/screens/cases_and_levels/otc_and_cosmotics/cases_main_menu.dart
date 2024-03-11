@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescription_start.dart';
-import '../../../widgets_and_constants/before_questions_app_bar.dart';
+import 'package:medigi_verse_g/widgets_and_constants/before_questions_app_bar.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cases_start.dart';
 
-class PrescriptionMainMenuPage extends StatefulWidget {
+class CasesMainMenuPage extends StatefulWidget {
   final int levelNumber;
-  PrescriptionMainMenuPage({required this.levelNumber});
+  CasesMainMenuPage({required this.levelNumber});
 
   @override
-  _PrescriptionMainMenuPageState createState() =>
-      _PrescriptionMainMenuPageState();
+  _CasesMainMenuPageState createState() => _CasesMainMenuPageState();
 }
 
-class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
+class _CasesMainMenuPageState extends State<CasesMainMenuPage> {
   @override
   Widget build(BuildContext context) {
     double buttonSize = kButtonSize;
@@ -36,12 +35,12 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
                         heightFactor: containerWidth,
                         child: ClipOval(
                           child: Container(
-                            color: kMainLevelMenuBackColor,
+                            color: const Color(0xFFDFA45D),
                           ),
                         ),
                       ),
                     ),
-                    Image.asset('assets/pres_main_menu_f.png'),
+                    Image.asset('assets/cases_main_menu.png'),
                   ],
                 ),
               ),
@@ -50,7 +49,7 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
                   gradient: const LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
-                    colors: [Color(0xFFF7726E), Color(0xFFFBB07B)],
+                    colors: [Color(0xFFF0A247), Color(0xFFF7C767)],
                     stops: [0.5, 0.5],
                   ),
                   borderRadius: BorderRadius.circular(25.0),
@@ -61,8 +60,8 @@ class _PrescriptionMainMenuPageState extends State<PrescriptionMainMenuPage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PrescriptionStartPage(
-                            levelNumber: widget.levelNumber),
+                        builder: (context) =>
+                            CasesStartPage(levelNumber: widget.levelNumber),
                       ),
                     );
                   },

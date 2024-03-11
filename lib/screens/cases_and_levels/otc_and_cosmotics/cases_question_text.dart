@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
-import 'prescriptions/medicine_name_question.dart';
 import 'package:medigi_verse_g/widgets_and_constants/before_questions_app_bar.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/question_image.dart';
 
-class QuestionImagePage extends StatefulWidget {
+class CasesQuestionText extends StatefulWidget {
   final int levelNumber;
-  QuestionImagePage({required this.levelNumber});
+  CasesQuestionText({required this.levelNumber});
 
   @override
-  _QuestionImagePageState createState() => _QuestionImagePageState();
+  _CasesQuestionTextState createState() => _CasesQuestionTextState();
 }
 
-class _QuestionImagePageState extends State<QuestionImagePage> {
-  double buttonSize = kButtonSize;
+class _CasesQuestionTextState extends State<CasesQuestionText> {
   double containerWidth = 0.85;
   @override
   Widget build(BuildContext context) {
@@ -21,10 +20,9 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 40.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               BeforeQuestionsAppBar(
-                buttonSize: buttonSize,
+                buttonSize: kButtonSize,
                 levelNumber: widget.levelNumber,
                 color: backgroundColor,
               ),
@@ -32,7 +30,6 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
                 height: 10.0,
               ),
               Expanded(
-                //TODO: Replace this container with the image fetched form the database
                 child: Container(
                   decoration: BoxDecoration(
                     color: const Color(0xFFD9D9D9),
@@ -42,12 +39,37 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
                     ),
                   ),
                   width: double.maxFinite,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      //TODO: Fetch the image form the database based on the category and the level of the question
-                      'assets/Prescription1.png',
-                      fit: BoxFit.fill,
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 10.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        //TODO: Replace this with actual questions fetched from the database
+                        Text(
+                          '1. ------------',
+                          style: TextStyle(
+                            fontFamily: 'Jockey',
+                            fontSize: 30.0,
+                          ),
+                        ),
+                        Text(
+                          '2. ------------',
+                          style: TextStyle(
+                            fontFamily: 'Jockey',
+                            fontSize: 30.0,
+                          ),
+                        ),
+                        Text(
+                          '3. ------------',
+                          style: TextStyle(
+                            fontFamily: 'Jockey',
+                            fontSize: 30.0,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -74,7 +96,7 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MedicineNameQuestionPage(
+                            builder: (context) => QuestionImagePage(
                                 levelNumber: widget.levelNumber),
                           ),
                         );

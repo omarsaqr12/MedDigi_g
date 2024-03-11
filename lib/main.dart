@@ -4,6 +4,8 @@ import 'package:medigi_verse_g/screens/onboarding.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
 import 'screens/profile.dart';
 import 'screens/home.dart';
+import 'screens/cases_and_levels/hint_screen.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/diagnoses.dart';
 
 void main() {
   runApp(const MedigiGame());
@@ -24,7 +26,9 @@ class MedigiGame extends StatelessWidget {
           color: appBarColor,
         ),
       ),
-      home: OnboardingScreen(),
+      home: DiagnosisPage(
+        levelNumber: 1,
+      ),
     );
   }
 }

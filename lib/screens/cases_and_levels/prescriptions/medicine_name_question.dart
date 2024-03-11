@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/questions_app_bar.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/correct_screen.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/wrong_screen.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/p_question_box.dart';
 
 class MedicineNameQuestionPage extends StatefulWidget {
   final int levelNumber;
@@ -32,62 +32,7 @@ class _MedicineNameQuestionPageState extends State<MedicineNameQuestionPage> {
               const SizedBox(
                 height: 50.0,
               ),
-              Stack(
-                children: [
-                  Container(
-                    width: double.maxFinite,
-                    height: 100.0,
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                    ),
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFD8D8D8),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15.0),
-                      ),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Medicine #1',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 10.0,
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5.0,
-                      ),
-                      decoration: const BoxDecoration(
-                        color: backgroundColor,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'What is the name of',
-                          style: TextStyle(
-                            color: Color(0xFFFBC423),
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              const PQuestionBox(questionText: 'What is the name of'),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

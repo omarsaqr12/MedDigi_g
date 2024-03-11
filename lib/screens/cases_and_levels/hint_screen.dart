@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/usage_question.dart';
 
-class WrongPage extends StatefulWidget {
+class HintPage extends StatefulWidget {
   final int levelNumber;
-  WrongPage({required this.levelNumber});
+  HintPage({required this.levelNumber});
 
   @override
-  _WrongPageState createState() => _WrongPageState();
+  _HintPageState createState() => _HintPageState();
 }
 
-class _WrongPageState extends State<WrongPage> {
+class _HintPageState extends State<HintPage> {
   @override
   Widget build(BuildContext context) {
-    double containerWidth = 0.85;
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -23,15 +21,32 @@ class _WrongPageState extends State<WrongPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10.0,
+                ),
                 width: double.maxFinite,
-                color: const Color(0xFFc5b9b3),
-                child: const Center(
-                  child: Text(
-                    'Wrong',
-                    style: TextStyle(
-                      color: Color(0xFF052437),
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.bold,
+                color: const Color(0xFFF6726E),
+                child: Center(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 5.0,
+                      horizontal: 20.0,
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15.0),
+                        ),
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2.0,
+                        )),
+                    child: const Text(
+                      'Hint',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -39,32 +54,41 @@ class _WrongPageState extends State<WrongPage> {
               Expanded(
                 child: Stack(
                   children: [
-                    Positioned.fill(
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 20.0,
+                        horizontal: 10.0,
+                      ),
                       child: FractionallySizedBox(
-                        widthFactor: containerWidth,
-                        heightFactor: containerWidth,
                         child: ClipOval(
                           child: Container(
                             color: kSecondaryColor,
+                            child: const Center(
+                              child: Text(
+                                'Hint Text',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Image.asset(
-                      'assets/wrong_screen.png',
                     ),
                   ],
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
-                        colors: [backgroundColor, Color(0xFF5895B7)],
+                        colors: [Color(0xFF5895B7), backgroundColor],
                         stops: [0.5, 0.5],
                       ),
                       borderRadius: BorderRadius.circular(25.0),
@@ -87,7 +111,7 @@ class _WrongPageState extends State<WrongPage> {
                             vertical: 3.0, horizontal: 30.0),
                       ),
                       child: const Text(
-                        'Next',
+                        'Try again',
                         style: TextStyle(
                             fontSize: 20.0, fontWeight: FontWeight.bold),
                       ),

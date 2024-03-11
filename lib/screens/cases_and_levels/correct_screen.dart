@@ -45,7 +45,7 @@ class _CorrectPageState extends State<CorrectPage> {
                         heightFactor: containerWidth,
                         child: ClipOval(
                           child: Container(
-                            color: kMainLevelMenuBackColor,
+                            color: kSecondaryColor,
                           ),
                         ),
                       ),

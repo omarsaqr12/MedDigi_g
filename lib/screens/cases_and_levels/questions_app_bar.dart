@@ -30,7 +30,7 @@ class QuestionAppBar extends StatelessWidget {
           child: Icon(
             CupertinoIcons.doc_text_fill,
             size: buttonSize,
-            color: Color(0xFF18333C),
+            color: const Color(0xFF18333C),
           ),
         ),
         Container(
@@ -43,10 +43,10 @@ class QuestionAppBar extends StatelessWidget {
             borderRadius: const BorderRadius.all(
               Radius.circular(40.0),
             ),
-            color: Color(0xFF3F6980),
+            color: const Color(0xFF3F6980),
           ),
           child: Text(
-            'level ${levelNumber}',
+            'level $levelNumber',
             style: const TextStyle(color: Colors.white, fontSize: 24.0),
           ),
         ),
@@ -60,7 +60,7 @@ class QuestionAppBar extends StatelessWidget {
             const SizedBox(
               width: 5.0,
             ),
-            Text(
+            const Text(
               '10',
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             )

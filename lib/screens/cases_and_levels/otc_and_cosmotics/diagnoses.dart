@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/questions_app_bar.dart';
 import 'package:medigi_verse_g/widgets_and_constants/choice-box.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/p_question_box.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/question_box.dart';
 
-class UsageQuestionPage extends StatefulWidget {
+class DiagnosisPage extends StatefulWidget {
   final int levelNumber;
-  UsageQuestionPage({required this.levelNumber});
+  DiagnosisPage({required this.levelNumber});
   @override
-  _UsageQuestionPageState createState() => _UsageQuestionPageState();
+  _DiagnosisPageState createState() => _DiagnosisPageState();
 }
 
-class _UsageQuestionPageState extends State<UsageQuestionPage> {
+class _DiagnosisPageState extends State<DiagnosisPage> {
   double buttonSize = kButtonSize;
   double containerWidth = 0.85;
   @override
@@ -30,12 +30,13 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
               const SizedBox(
                 height: 50.0,
               ),
-              const PQuestionBox(
-                questionText: 'What is the usage of',
+              const QuestionBoxCases(
+                questionText: 'What is your diagnosis?',
               ),
               const SizedBox(
                 height: 50.0,
               ),
+              //TODO: fetch the choices of the corresponding question
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

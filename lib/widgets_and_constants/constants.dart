@@ -12,3 +12,4 @@ const Color kMainLevelMenuButtonColor = Color(0xFFF7726E);
 const double horizontalPadding = 15.0;
 const double kButtonSize = 45.0;
 const Color kSecondaryBackgroundColor = Color(0xFFACCCD4);
+const Color kSecondaryColor = Color(0xFF3F6980);

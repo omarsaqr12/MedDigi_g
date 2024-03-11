@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
-import '../question_image.dart';
-import '../../../widgets_and_constants/before_questions_app_bar.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cases_question_text.dart';
+import 'package:medigi_verse_g/widgets_and_constants/before_questions_app_bar.dart';
 
-class PrescriptionStartPage extends StatefulWidget {
+class CasesStartPage extends StatefulWidget {
   final int levelNumber;
-  PrescriptionStartPage({required this.levelNumber});
+  CasesStartPage({required this.levelNumber});
 
   @override
-  _PrescriptionStartPageState createState() => _PrescriptionStartPageState();
+  _CasesStartPageState createState() => _CasesStartPageState();
 }
 
-class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
+class _CasesStartPageState extends State<CasesStartPage> {
   @override
   Widget build(BuildContext context) {
     double buttonSize = kButtonSize;
@@ -32,6 +32,7 @@ class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
                 height: 20.0,
               ),
               Container(
+                width: double.maxFinite,
                 padding:
                     const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
                 decoration: const BoxDecoration(
@@ -43,15 +44,11 @@ class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
                 child: const Column(
                   children: [
                     Text(
-                      'Read the following Prescription',
+                      'Check out the following symptoms',
                       style: TextStyle(fontSize: 28.0, fontFamily: 'Gurajada'),
                     ),
                     Text(
-                      'Answer each question',
-                      style: TextStyle(fontSize: 28.0, fontFamily: 'Gurajada'),
-                    ),
-                    Text(
-                      'feel free to go back to the prescription again',
+                      'and try to answer each questions',
                       style: TextStyle(fontSize: 28.0, fontFamily: 'Gurajada'),
                     ),
                   ],
@@ -64,14 +61,14 @@ class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
                 child: SizedBox(
                   width: double.maxFinite,
                   child: Stack(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.bottomRight,
                     children: [
                       const Positioned(
-                        right: 0,
+                        left: 0,
                         top: 0,
                         bottom: 0,
                         child: Image(
-                          image: AssetImage('assets/pres_question_f.png'),
+                          image: AssetImage('assets/cases_start.png'),
                         ),
                       ),
                       Container(
@@ -90,7 +87,7 @@ class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => QuestionImagePage(
+                                builder: (context) => CasesQuestionText(
                                     levelNumber: widget.levelNumber),
                               ),
                             );
