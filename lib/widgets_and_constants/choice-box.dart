@@ -9,11 +9,13 @@ class ChoiceBox extends StatefulWidget {
     required this.choiceNum,
     required this.choiceName,
     required this.levelNum,
+    required this.questionType,
   }) : super(key: key);
 
   final int choiceNum;
   final String choiceName;
   final int levelNum;
+  final String questionType;
 
   @override
   _ChoiceBoxState createState() => _ChoiceBoxState();

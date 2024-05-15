@@ -91,7 +91,9 @@ class _PrescriptionStartPageState extends State<PrescriptionStartPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => QuestionImagePage(
-                                    levelNumber: widget.levelNumber),
+                                  levelNumber: widget.levelNumber,
+                                  questionType: 'p',
+                                ),
                               ),
                             );
                           },

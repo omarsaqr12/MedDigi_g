@@ -26,6 +26,7 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
               QuestionAppBar(
                 buttonSize: buttonSize,
                 levelNumber: widget.levelNumber,
+                questionType: 'p',
               ),
               const SizedBox(
                 height: 50.0,
@@ -44,6 +45,7 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
                       choiceNum: 1,
                       choiceName: 'Anti-inflamatory',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -52,6 +54,7 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
                       choiceNum: 2,
                       choiceName: 'Treating headaches',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -60,6 +63,7 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
                       choiceNum: 3,
                       choiceName: 'treating colds',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -68,6 +72,7 @@ class _UsageQuestionPageState extends State<UsageQuestionPage> {
                       choiceNum: 4,
                       choiceName: 'treating allergies',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                   ],
                 ),

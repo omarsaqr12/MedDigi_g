@@ -3,7 +3,7 @@ import 'package:medigi_verse_g/screens/home.dart';
 import 'package:medigi_verse_g/screens/help.dart';
 import 'package:medigi_verse_g/screens/settings.dart';
 import 'package:medigi_verse_g/screens/profile.dart';
-import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cases_level_widget.dart';
+import 'package:medigi_verse_g/widgets_and_constants/level_widget.dart';
 
 class OTCPage extends StatefulWidget {
   @override
@@ -33,16 +33,19 @@ class _OTCPageState extends State<OTCPage> {
                   imgNumber: 1,
                   containerColor: Color(0xFFFDE256),
                   levelNumber: 1,
+                  questionType: 'o',
                 ),
                 LevelWidget(
                   imgNumber: 2,
                   containerColor: Color(0xFFA9D8F1),
                   levelNumber: 2,
+                  questionType: 'o',
                 ),
                 LevelWidget(
                   imgNumber: 3,
                   containerColor: Color(0xFFF2B764),
                   levelNumber: 3,
+                  questionType: 'o',
                 ),
               ],
             ),

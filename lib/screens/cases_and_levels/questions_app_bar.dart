@@ -7,10 +7,12 @@ class QuestionAppBar extends StatelessWidget {
     super.key,
     required this.buttonSize,
     required this.levelNumber,
+    required this.questionType,
   });
 
   final double buttonSize;
   final int levelNumber;
+  final String questionType;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +24,10 @@ class QuestionAppBar extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    QuestionImagePage(levelNumber: levelNumber),
+                builder: (context) => QuestionImagePage(
+                  levelNumber: levelNumber,
+                  questionType: questionType,
+                ),
               ),
             );
           },

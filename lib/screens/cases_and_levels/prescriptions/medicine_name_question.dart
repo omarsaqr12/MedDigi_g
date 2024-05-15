@@ -28,6 +28,7 @@ class _MedicineNameQuestionPageState extends State<MedicineNameQuestionPage> {
               QuestionAppBar(
                 buttonSize: buttonSize,
                 levelNumber: widget.levelNumber,
+                questionType: 'p',
               ),
               const SizedBox(
                 height: 50.0,

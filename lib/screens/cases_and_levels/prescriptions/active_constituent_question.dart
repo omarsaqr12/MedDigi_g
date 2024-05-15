@@ -26,6 +26,7 @@ class _ActiveConstiuentPageState extends State<ActiveConstiuentPage> {
               QuestionAppBar(
                 buttonSize: buttonSize,
                 levelNumber: widget.levelNumber,
+                questionType: 'p',
               ),
               const SizedBox(
                 height: 50.0,
@@ -42,6 +43,7 @@ class _ActiveConstiuentPageState extends State<ActiveConstiuentPage> {
                       choiceNum: 1,
                       choiceName: 'Chymotrypsin-Trypsin',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -50,6 +52,7 @@ class _ActiveConstiuentPageState extends State<ActiveConstiuentPage> {
                       choiceNum: 2,
                       choiceName: 'Acetylsalicylic Acid',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -58,6 +61,7 @@ class _ActiveConstiuentPageState extends State<ActiveConstiuentPage> {
                       choiceNum: 3,
                       choiceName: 'Pepsin',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -66,6 +70,7 @@ class _ActiveConstiuentPageState extends State<ActiveConstiuentPage> {
                       choiceNum: 4,
                       choiceName: 'Bacitracin',
                       levelNum: widget.levelNumber,
+                      questionType: 'p',
                     ),
                   ],
                 ),

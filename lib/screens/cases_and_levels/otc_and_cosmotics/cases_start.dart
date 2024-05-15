@@ -5,7 +5,8 @@ import 'package:medigi_verse_g/widgets_and_constants/before_questions_app_bar.da
 
 class CasesStartPage extends StatefulWidget {
   final int levelNumber;
-  CasesStartPage({required this.levelNumber});
+  final String questionType;
+  CasesStartPage({required this.levelNumber, required this.questionType});
 
   @override
   _CasesStartPageState createState() => _CasesStartPageState();
@@ -88,7 +89,9 @@ class _CasesStartPageState extends State<CasesStartPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => CasesQuestionText(
-                                    levelNumber: widget.levelNumber),
+                                  levelNumber: widget.levelNumber,
+                                  questionType: widget.questionType,
+                                ),
                               ),
                             );
                           },

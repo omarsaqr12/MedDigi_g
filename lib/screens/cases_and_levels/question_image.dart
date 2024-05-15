@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/widgets_and_constants/constants.dart';
 import 'prescriptions/medicine_name_question.dart';
 import 'package:medigi_verse_g/widgets_and_constants/before_questions_app_bar.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/diagnoses.dart';
 
 class QuestionImagePage extends StatefulWidget {
   final int levelNumber;
-  QuestionImagePage({required this.levelNumber});
+  final String questionType;
+  QuestionImagePage({required this.levelNumber, required this.questionType});
 
   @override
   _QuestionImagePageState createState() => _QuestionImagePageState();
@@ -14,6 +16,29 @@ class QuestionImagePage extends StatefulWidget {
 class _QuestionImagePageState extends State<QuestionImagePage> {
   double buttonSize = kButtonSize;
   double containerWidth = 0.85;
+
+  Image select_image() {
+    if (widget.questionType == 'p') {
+      return Image.asset(
+        //TODO: Fetch the image form the database based on the category and the level of the question
+        'assets/Prescription1.png',
+        fit: BoxFit.fill,
+      );
+    } else if (widget.questionType == 'o' || widget.questionType == 'c') {
+      return Image.asset(
+        //TODO: Fetch the image form the database based on the category and the level of the question
+        'assets/placeholder.png',
+        fit: BoxFit.fill,
+      );
+    } else {
+      return Image.asset(
+        //TODO: Fetch the image form the database based on the category and the level of the question
+        'assets/placeholder.png',
+        fit: BoxFit.fill,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +68,8 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
                   ),
                   width: double.maxFinite,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      //TODO: Fetch the image form the database based on the category and the level of the question
-                      'assets/Prescription1.png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: select_image()),
                 ),
               ),
               const SizedBox(
@@ -71,13 +91,25 @@ class _QuestionImagePageState extends State<QuestionImagePage> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MedicineNameQuestionPage(
-                                levelNumber: widget.levelNumber),
-                          ),
-                        );
+                        if (widget.questionType == 'p') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MedicineNameQuestionPage(
+                                  levelNumber: widget.levelNumber),
+                            ),
+                          );
+                        } else if (widget.questionType == 'o' ||
+                            widget.questionType == 'c') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DiagnosisPage(
+                                      levelNumber: widget.levelNumber,
+                                      questionType: widget.questionType,
+                                    )),
+                          );
+                        }
                       },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.white,

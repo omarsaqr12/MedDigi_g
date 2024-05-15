@@ -26,9 +26,7 @@ class MedigiGame extends StatelessWidget {
           color: appBarColor,
         ),
       ),
-      home: DiagnosisPage(
-        levelNumber: 1,
-      ),
+      home: OnboardingScreen(),
     );
   }
 }

@@ -6,7 +6,8 @@ import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/questi
 
 class TreatmentPage extends StatefulWidget {
   final int levelNumber;
-  TreatmentPage({required this.levelNumber});
+  final String questionType;
+  TreatmentPage({required this.levelNumber, required this.questionType});
   @override
   _TreatmentPageState createState() => _TreatmentPageState();
 }
@@ -25,6 +26,7 @@ class _TreatmentPageState extends State<TreatmentPage> {
               QuestionAppBar(
                 buttonSize: kButtonSize,
                 levelNumber: widget.levelNumber,
+                questionType: widget.questionType,
               ),
               const SizedBox(
                 height: 50.0,
@@ -44,6 +46,7 @@ class _TreatmentPageState extends State<TreatmentPage> {
                       choiceNum: 1,
                       choiceName: 'Anti-inflamatory',
                       levelNum: widget.levelNumber,
+                      questionType: '',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -52,6 +55,7 @@ class _TreatmentPageState extends State<TreatmentPage> {
                       choiceNum: 2,
                       choiceName: 'Treating headaches',
                       levelNum: widget.levelNumber,
+                      questionType: '',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -60,6 +64,7 @@ class _TreatmentPageState extends State<TreatmentPage> {
                       choiceNum: 3,
                       choiceName: 'treating colds',
                       levelNum: widget.levelNumber,
+                      questionType: '',
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -68,6 +73,7 @@ class _TreatmentPageState extends State<TreatmentPage> {
                       choiceNum: 4,
                       choiceName: 'treating allergies',
                       levelNum: widget.levelNumber,
+                      questionType: '',
                     ),
                   ],
                 ),

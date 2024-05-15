@@ -5,7 +5,8 @@ import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cases_
 
 class CasesMainMenuPage extends StatefulWidget {
   final int levelNumber;
-  CasesMainMenuPage({required this.levelNumber});
+  final String questionType;
+  CasesMainMenuPage({required this.levelNumber, required this.questionType});
 
   @override
   _CasesMainMenuPageState createState() => _CasesMainMenuPageState();
@@ -60,8 +61,10 @@ class _CasesMainMenuPageState extends State<CasesMainMenuPage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            CasesStartPage(levelNumber: widget.levelNumber),
+                        builder: (context) => CasesStartPage(
+                          levelNumber: widget.levelNumber,
+                          questionType: widget.questionType,
+                        ),
                       ),
                     );
                   },

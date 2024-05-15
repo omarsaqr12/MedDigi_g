@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:medigi_verse_g/screens/cases_and_levels/otc_and_cosmotics/cases_main_menu.dart';
+import 'package:medigi_verse_g/screens/cases_and_levels/prescriptions/prescription_main_menu.dart';
 
 class LevelWidget extends StatelessWidget {
   final int imgNumber;
   final Color containerColor;
   final int levelNumber;
+  final String questionType;
   const LevelWidget({
     Key? key,
     required this.imgNumber,
     required this.containerColor,
     required this.levelNumber,
+    required this.questionType,
   }) : super(key: key);
 
   @override
@@ -21,13 +24,25 @@ class LevelWidget extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               //TODO: implement fetching from the database based on the level (can be obtained by imgNumber variable)
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      CasesMainMenuPage(levelNumber: levelNumber),
-                ),
-              );
+              if (questionType == 'p') {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PrescriptionMainMenuPage(levelNumber: levelNumber),
+                  ),
+                );
+              } else if (questionType == 'c' || questionType == 'o') {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CasesMainMenuPage(
+                      levelNumber: levelNumber,
+                      questionType: questionType,
+                    ),
+                  ),
+                );
+              }
             },
             child: Image.asset(
               'assets/level$imgNumber.png',

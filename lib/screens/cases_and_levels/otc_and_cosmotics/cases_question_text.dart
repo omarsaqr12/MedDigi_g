@@ -5,7 +5,8 @@ import 'package:medigi_verse_g/screens/cases_and_levels/question_image.dart';
 
 class CasesQuestionText extends StatefulWidget {
   final int levelNumber;
-  CasesQuestionText({required this.levelNumber});
+  final String questionType;
+  CasesQuestionText({required this.levelNumber, required this.questionType});
 
   @override
   _CasesQuestionTextState createState() => _CasesQuestionTextState();
@@ -97,7 +98,9 @@ class _CasesQuestionTextState extends State<CasesQuestionText> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => QuestionImagePage(
-                                levelNumber: widget.levelNumber),
+                              levelNumber: widget.levelNumber,
+                              questionType: widget.questionType,
+                            ),
                           ),
                         );
                       },
